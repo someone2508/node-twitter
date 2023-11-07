@@ -9,8 +9,17 @@ const {mongodb} = require('./src/utils/index');
 // connecting to the mongodb database
 mongodb.initialize();
 
+// setting global variables
+require('./src/globals/index');
+
+console.log(global);
+
+const authRoutes = require('./src/routes/authRoutes');
+
 // setting up express json parser
 app.use(express.json());
+
+app.use(authRoutes);
 
 const PORT = process.env.PORT || 3000;
 

@@ -49,6 +49,7 @@ const userSchema = mongoose.Schema({
     eStatus: {
         type: String,
         enum: ["y", "n", "d"],   // y=active, n=blocked, d=deleted
+        default: "y"
     },
     sProfilePicUrl: {
         type: String,
@@ -66,6 +67,8 @@ const userSchema = mongoose.Schema({
     sResetPasswordExpiresIn: String,
     sVerifyEmailToken: String,
     sVerifyEmailTokenExpiresIn: String
+}, {
+    timeStamps: true
 });
 
 module.exports = mongoose.model('User', userSchema);
