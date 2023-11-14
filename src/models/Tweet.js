@@ -58,4 +58,4 @@ const tweetSchema = mongoose.Schema({
     timeStamps: true
 });
 
-modules.exports = mongoose.model('Tweet', tweetSchema);
+module.exports = mongoose.model('Tweet', tweetSchema);

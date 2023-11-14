@@ -12,14 +12,16 @@ mongodb.initialize();
 // setting global variables
 require('./src/globals/index');
 
-console.log(global);
-
 const authRoutes = require('./src/routes/authRoutes');
+const tweetRoutes = require('./src/routes/tweetRoutes');
+const userRoutes = require('./src/routes/userRoutes');
 
 // setting up express json parser
 app.use(express.json());
 
 app.use(authRoutes);
+app.use(tweetRoutes);
+app.use(userRoutes);
 
 const PORT = process.env.PORT || 3000;
 
